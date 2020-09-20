@@ -1,0 +1,98 @@
+.card-content {
+  display:flex;
+  width:100%;
+  gap:2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+mat-card-footer {
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
+mat-icon {
+  font-size:1.5em;
+  padding-left: .5vw;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+mat-card-header {
+  position: relative;
+  top: .25em;
+  left: .25em;
+}
+h1 {
+  padding:0;
+  margin:0;
+  padding-top:.25em;
+  padding-left:.25em;
+}
+#overview-icon { color: yellow;}
+#recovery-icon { color: green}
+#deceased-icon { color: red}
+
+h1 {
+  font-size: 1em;
+}
+
+.cards {
+  margin:1vw;
+}
+
+// news
+#news-image {
+  padding:1rem;
+}
+
+#img-div {
+  float:left;
+  padding-right: 5vh;
+  margin-left: 2vh;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  right: 1px;
+}
+#news-content-card {
+  height: auto;
+  cursor: pointer;
+}
+
+#news-card {
+  padding:0;
+  margin:0;
+  height: 125vh;
+}
+
+#news-content {
+  margin-top:3vh;
+  width:100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  float:left;
+  object-fit: cover;
+  padding-top: 2.5vh;
+  padding-left: 2vw;
+}
+
+mat-card-content {
+  padding-left: 10vw;
+}
+
+// graphs
+
+canvas {
+    height: 50vh !important;
+    width: 100% !important;
+  }

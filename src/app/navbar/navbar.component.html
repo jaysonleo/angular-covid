@@ -1,0 +1,72 @@
+<mat-toolbar color="primary" class="sticky">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row">
+      <button mat-button>
+        <span class="logo-title" routerLink="">Coronavirus Tracker</span>
+        <mat-icon>coronavirus</mat-icon>
+      </button>
+      <div *ngIf="!deviceXs" fxLayout="row">
+        <button mat-button routerLink="/causes" routerLinkActive="active">
+          <span>What is COVID?</span>
+        </button>
+
+        <button mat-button routerLink="/prevention" routerLinkActive="active">
+          <span>Prevention</span>
+        </button>
+
+        <button mat-button routerLink="/about" routerLinkActive="active">
+          <span>About</span>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-around center">
+    <button mat-button>
+      <span>What is COVID?</span>
+    </button>
+
+    <button mat-button>
+      <span>Prevention</span>
+    </button>
+
+    <button mat-button>
+      <span>About</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div fxLayout="row">
+      <button mat-button>
+        <span class="logo-title">Coronavirus Tracker</span>
+        <mat-icon>coronavirus</mat-icon>
+      </button>
+      <div *ngIf="!deviceXs">
+        <button mat-button>
+          <span>What is COVID?</span>
+        </button>
+
+        <button mat-button>
+          <span>Prevention</span>
+        </button>
+
+        <button mat-button>
+          <span>About</span>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
+    <button mat-button>
+      <span>What is COVID?</span>
+    </button>
+
+    <button mat-button>
+      <span>Prevention</span>
+    </button>
+
+    <button mat-button>
+      <span>About</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar> -->
