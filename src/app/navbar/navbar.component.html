@@ -1,72 +1,16 @@
-<mat-toolbar color="primary" class="sticky">
-  <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row">
-      <button mat-button>
-        <span class="logo-title" routerLink="">Coronavirus Tracker</span>
-        <mat-icon>coronavirus</mat-icon>
-      </button>
-      <div *ngIf="!deviceXs" fxLayout="row">
-        <button mat-button routerLink="/causes" routerLinkActive="active">
-          <span>What is COVID?</span>
-        </button>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="onToggleSidenav()" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button [routerLink]="['']" mat-button style="display: inline;">
+    <h1>Coronavirus Tracker     <mat-icon>coronavirus</mat-icon></h1>
 
-        <button mat-button routerLink="/prevention" routerLinkActive="active">
-          <span>Prevention</span>
-        </button>
-
-        <button mat-button routerLink="/about" routerLinkActive="active">
-          <span>About</span>
-        </button>
-      </div>
+  </button>
+  <div fxFlex fxLayout fxLayoutAlign="end">
+    <div fxHide.lt-md>
+      <a [routerLink]="['/causes']" mat-button>What is COVID-19?</a>
+      <a [routerLink]="['/prevention']" mat-button>Prevention</a>
+      <a [routerLink]="['/about']" mat-button>About</a>
     </div>
-  </mat-toolbar-row>
-  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-around center">
-    <button mat-button>
-      <span>What is COVID?</span>
-    </button>
-
-    <button mat-button>
-      <span>Prevention</span>
-    </button>
-
-    <button mat-button>
-      <span>About</span>
-    </button>
-  </mat-toolbar-row>
+  </div>
 </mat-toolbar>
-<!-- <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div fxLayout="row">
-      <button mat-button>
-        <span class="logo-title">Coronavirus Tracker</span>
-        <mat-icon>coronavirus</mat-icon>
-      </button>
-      <div *ngIf="!deviceXs">
-        <button mat-button>
-          <span>What is COVID?</span>
-        </button>
-
-        <button mat-button>
-          <span>Prevention</span>
-        </button>
-
-        <button mat-button>
-          <span>About</span>
-        </button>
-      </div>
-    </div>
-  </mat-toolbar-row>
-  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
-    <button mat-button>
-      <span>What is COVID?</span>
-    </button>
-
-    <button mat-button>
-      <span>Prevention</span>
-    </button>
-
-    <button mat-button>
-      <span>About</span>
-    </button>
-  </mat-toolbar-row>
-</mat-toolbar> -->

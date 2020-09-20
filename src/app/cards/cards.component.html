@@ -1,82 +1,48 @@
 <div class="cards" [ngStyle]="{'padding-top': paddingVal}" fxFlex fxLayout="column" fxLayoutGap="1rem">
-  <h1>COVID-19 data of the Philippines as of {{lastUpdate}}.</h1>
-  <div fxFlex fxLayout.md="column" fxLayout.lg="row">
-    <div>
-      <mat-card>
-        <mat-card-header>
-          <h1>Overview </h1>
-          <mat-icon id="overview-icon">people_alt</mat-icon>
-        </mat-card-header>
-        <div class="card-content">
-          <div class="overview-count">
-            <h2 id="totalConfirmed-counter">0</h2>
-            <p>Confirmed cases</p>
-          </div>
+  <h1>COVID-19 data of the Philippines as of {{lastUpdate}} based on {{totalConfirmedCount}} cases</h1>
+  <div id="count-container">
 
-          <div class="overview-count">
-            <h2 id="active-counter">0</h2>
-            <p>Active Cases</p>
-          </div>
+    <mat-card class="count-card" id="active">
+      <p class="count-title">Active</p>
+      <h2 id="active-counter">0</h2>
+    </mat-card>
 
-          <div class="overview-count">
-            <h2 id="totalCritical-counter">0</h2>
-            <p>Critical cases</p>
-          </div>
+    <mat-card class="count-card" id="critical">
+      <p class="count-title">Critical</p>
+      <h2 id="totalCritical-counter">0</h2>
+    </mat-card>
 
-          <div class="overview-count">
-            <h2 id="dailyInfections-counter">0</h2>
-            <p>Infected today</p>
-          </div>
-        </div>
-      </mat-card>
-    </div>
+    <mat-card class="count-card" id="recovery">
+      <p class="count-title">Recoveries</p>
+      <h2 id="totalRecovered-counter">0</h2>
+    </mat-card>
 
-    <div fxFlex fxLayout.xs="column">
-      <mat-card fxFlex>
-        <mat-card-header>
-          <h1>Recovered </h1>
-          <mat-icon id="recovery-icon">person_add</mat-icon>
-        </mat-card-header>
-        <div class="card-content">
-          <div class="overview-count">
-            <h2 id="totalRecovered-counter">0</h2>
-            <p>Total Recovered</p>
-          </div>
-          <div class="overview-count">
-            <h2 id="rr-counter">0</h2>
-            <p>Recovery rate</p>
-          </div>
-          <div class="overview-count">
-            <h2 id="dailyRecovered-counter">0</h2>
-            <p>Recovered today</p>
-          </div>
-        </div>
-      </mat-card>
+    <mat-card class="count-card" id="recovery-rate">
+      <p class="count-title">Recovery Rate</p>
+      <h2 id="rr-counter">0</h2>
+    </mat-card>
 
-      <mat-card fxFlex>
-        <mat-card-header>
-          <h1>Deceased </h1>
-          <mat-icon id="deceased-icon">person_remove</mat-icon>
-        </mat-card-header>
-        <div class="card-content">
-          <div class="overview-count">
-            <h2 id="totalDeceased-counter">0</h2>
-            <p>Total Deceased</p>
-          </div>
-          <div class="overview-count">
-            <h2 id="fr-counter">0</h2>
-            <p>Fatality rate</p>
-          </div>
-          <div class="overview-count">
-            <h2 id="dailyDeceased-counter">0</h2>
-            <p>Deceased today</p>
-          </div>
-        </div>
-      </mat-card>
-    </div>
+    <mat-card class="count-card" id="recovered-today">
+      <p class="count-title">Recovered today</p>
+      <h2 id="dailyRecovered-counter">0</h2>
+    </mat-card>
+
+    <mat-card class="count-card" id="deceased">
+      <p class="count-title">Deceased</p>
+      <h2 id="totalDeceased-counter">0</h2>
+    </mat-card>
+
+    <mat-card class="count-card" id="deceased-rate">
+      <p class="count-title">Deceased Rate</p>
+      <h2 id="fr-counter">0</h2>
+    </mat-card>
+
+    <mat-card class="count-card" id="deceased-today">
+      <p class="count-title">Deceased today</p>
+      <h2 id="dailyDeceased-counter">0</h2>
+    </mat-card>
   </div>
 
-  <!-- abc -->
   <div fxFlex fxLayout.xs="column" fxLayout.md="column" fxLayout.lg="row">
     <div fxFlex fxLayoutGap="1rem" fxLayout="column">
       <mat-card fxFlex>

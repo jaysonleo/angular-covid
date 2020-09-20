@@ -1,4 +1,15 @@
-<app-navbar [deviceXs]="deviceXs"></app-navbar>
-<div [ngStyle]="{'padding-top': paddingVal}">
+<!-- <app-navbar [deviceXs]="deviceXs"></app-navbar>
+<div>
   <router-outlet></router-outlet>
+</div> -->
+<div class="root-container">
+  <app-navbar (sidenavToggle)="sidenav.toggle()"></app-navbar>
+  <mat-sidenav-container fxFlexFill>
+      <mat-sidenav #sidenav fxHide.gt-sm>
+          <app-sidenav (sidenavClose)="sidenav.close()"></app-sidenav>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

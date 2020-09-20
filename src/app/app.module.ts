@@ -15,10 +15,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 import { PreventionComponent } from './prevention/prevention.component';
 import { CausesComponent } from './causes/causes.component';
 import { AboutComponent } from './about/about.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,7 @@ import { AboutComponent } from './about/about.component';
     PreventionComponent,
     CausesComponent,
     AboutComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { AboutComponent } from './about/about.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

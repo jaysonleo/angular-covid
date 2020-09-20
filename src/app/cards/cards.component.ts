@@ -54,7 +54,7 @@ export class CardsComponent implements OnInit {
 
     this.activeCount = this.currDataJson.activeCases;
     this.totalCriticalCount = this.currDataJson.totalCritical;
-    this.totalConfirmedCount = this.currDataJson.totalConfirmed;
+    this.totalConfirmedCount = (this.currDataJson.totalConfirmed).toLocaleString('en');
 
     this.totalRecoveredCount = this.currDataJson.totalRecovered;
     this.recoveryRateCount = this.currDataJson.PR;
@@ -63,7 +63,7 @@ export class CardsComponent implements OnInit {
     this.totalDeceasedCount = this.currDataJson.totalDeaths;
 
     const activeCounter = document.getElementById('active-counter');
-    const totalConfirmedCounter = document.getElementById('totalConfirmed-counter');
+    // const totalConfirmedCounter = document.getElementById('totalConfirmed-counter');
     const totalRecoveredCount = document.getElementById('totalRecovered-counter');
     const totalDeceasedCount = document.getElementById('totalDeceased-counter');
     const totalCriticalCount = document.getElementById('totalCritical-counter');
@@ -71,7 +71,7 @@ export class CardsComponent implements OnInit {
     const recoveryRateCount = document.getElementById('rr-counter');
 
     this.animateValue(activeCounter, 0, this.activeCount, 1000);
-    this.animateValue(totalConfirmedCounter, 0, this.totalConfirmedCount, 1000);
+    // this.animateValue(totalConfirmedCounter, 0, this.totalConfirmedCount, 1000);
     this.animateValue(totalRecoveredCount, 0, this.totalRecoveredCount, 1000);
     this.animateValue(totalDeceasedCount, 0, this.totalDeceasedCount, 1000);
     this.animateValue(totalCriticalCount, 0, this.totalCriticalCount, 1000);
@@ -156,11 +156,11 @@ export class CardsComponent implements OnInit {
   async getDailyData() {
     await this.service.getBarGraphDataService().subscribe(data => {
       this.dailyData = data[data.length -1];
-      const dailyInfectionsCount = document.getElementById('dailyInfections-counter');
+      // const dailyInfectionsCount = document.getElementById('dailyInfections-counter');
       const dailyRecoveredCount = document.getElementById('dailyRecovered-counter');
       const dailyDeceasedCount = document.getElementById('dailyDeceased-counter');
 
-      this.animateValue(dailyInfectionsCount, 0, this.dailyData.new_infections, 1000);
+      // this.animateValue(dailyInfectionsCount, 0, this.dailyData.new_infections, 1000);
       this.animateValue(dailyRecoveredCount, 0, this.dailyData.new_recovered, 1000);
       this.animateValue(dailyDeceasedCount, 0, this.dailyData.new_deaths, 1000);
 

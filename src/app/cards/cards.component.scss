@@ -6,6 +6,20 @@
   align-content: center;
 }
 
+#count-container {
+  display:flex;
+  margin-left:2vw;
+  margin-right:2vw;
+}
+
+.count-card {
+  width:15%;
+}
+
+.count-title {
+  font-size: .85em;
+}
+
 mat-card-footer {
   display:flex;
   justify-content: center;
@@ -39,6 +53,8 @@ h1 {
 }
 
 .cards {
+  border: 1px solid black;
+  border-radius: 8px;
   margin:1vw;
 }
 
@@ -96,3 +112,64 @@ canvas {
     height: 50vh !important;
     width: 100% !important;
   }
+
+
+  #active {grid-area: active}
+  #critical{grid-area: critical}
+  #recovery {grid-area: recovery}
+  #recovery-rate {grid-area: recovery-rate}
+  #recovered-today{grid-area: recovered-today}
+  #recovery {grid-area: recovery}
+  #deceased {grid-area: deceased}
+  #deceased-rate{grid-area: deceased-rate}
+  #deceased-today {grid-area: deceased-today}
+
+@media screen and (max-width: 1150px){
+  #count-container {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "active recovery recovery-rate recovered-today"
+    "critical deceased deceased-rate deceased-today";
+  }
+  .count-card {
+    width:75%;
+    margin-top:1vh;
+  }
+}
+
+@media screen and (max-width: 500px){
+  #count-container {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "recovery recovery-rate recovered-today"
+    "deceased deceased-rate deceased-today"
+    "active . critical";
+  }
+  .count-card {
+    width:75%;
+    margin-top:1vh;
+  }
+}
+
+
+@media screen and (max-width: 350px){
+  #count-container {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "recovery recovered-today"
+    "deceased deceased-today"
+    "recovery-rate deceased-rate"
+    "active critical";
+  }
+  .count-card {
+    width:75%;
+    margin-top:1vh;
+  }
+}
+
