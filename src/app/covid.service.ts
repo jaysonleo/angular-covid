@@ -23,8 +23,8 @@ export class CovidService {
     let startDate = beforeDate[2] + "-" + beforeDate[0] + "-" + beforeDate[1];
     let endDate = todayDate[2] + "-" + todayDate[0] + "-" + todayDate[1];
 
-    return this.http.get<any[]>('https://api.coronatracker.com/v4/analytics/trend/country?countryCode=PH&startDate='+ startDate +'&endDate=' + endDate)
-  }
+    return this.http.get<any[]>('https://api.coronatracker.com/v5/analytics/trend/country?countryCode=PH&startDate='+ startDate +'&endDate=' + endDate)
+  }                              
 
   getBarGraphDataService() {
     let beforeDate = new Date(Date.now() - 12096e5).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).split('/');
@@ -33,7 +33,7 @@ export class CovidService {
     let startDate = beforeDate[2] + "-" + beforeDate[0] + "-" + beforeDate[1];
     let endDate = todayDate[2] + "-" + todayDate[0] + "-" + todayDate[1];
 
-    return this.http.get<any[]>('https://api.coronatracker.com/v4/analytics/newcases/country?countryCode=PH&startDate='+ startDate +'&endDate=' + endDate)
+    return this.http.get<any[]>('https://api.coronatracker.com/v5/analytics/newcases/country?countryCode=PH&startDate='+ startDate +'&endDate=' + endDate)
   }
 
   getNewsDataService() {

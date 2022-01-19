@@ -50,17 +50,26 @@ export class CardsComponent implements OnInit {
 
   async getCount() {
     this.currDataJson = await this.service.getCurrentDataService();
+    console.log('currDataJson', this.currDataJson)
     this.lastUpdate = this.formatDate(this.currDataJson.lastUpdated);
 
-    this.activeCount = this.currDataJson.activeCases;
-    this.totalCriticalCount = this.currDataJson.totalCritical;
-    this.totalConfirmedCount = (this.currDataJson.totalConfirmed).toLocaleString('en');
-
+    //Recovery
     this.totalRecoveredCount = this.currDataJson.totalRecovered;
     this.recoveryRateCount = this.currDataJson.PR;
 
+    //Deceased
     this.fatalityRateCount = this.currDataJson.FR;
     this.totalDeceasedCount = this.currDataJson.totalDeaths;
+    this.dailyDeceasedCount = this.currDataJson.dailyDeaths;
+
+    //Others
+    this.dailyConfirmedCount = this.currDataJson.dailyConfirmed;
+    this.activeCount = this.currDataJson.activeCases;
+    this.totalCriticalCount = this.currDataJson.totalCritical;
+
+    this.totalConfirmedCount = (this.currDataJson.totalConfirmed).toLocaleString('en');
+
+
 
     const activeCounter = document.getElementById('active-counter');
     // const totalConfirmedCounter = document.getElementById('totalConfirmed-counter');
@@ -69,25 +78,19 @@ export class CardsComponent implements OnInit {
     const totalCriticalCount = document.getElementById('totalCritical-counter');
     const fatalityRateCount = document.getElementById('fr-counter');
     const recoveryRateCount = document.getElementById('rr-counter');
+    const dailyConfirmedCount = document.getElementById('dailyConfirmed-counter');
+    const dailyDeceasedCount = document.getElementById('dailyDeceased-counter');
 
     this.animateValue(activeCounter, 0, this.activeCount, 1000);
     // this.animateValue(totalConfirmedCounter, 0, this.totalConfirmedCount, 1000);
     this.animateValue(totalRecoveredCount, 0, this.totalRecoveredCount, 1000);
     this.animateValue(totalDeceasedCount, 0, this.totalDeceasedCount, 1000);
     this.animateValue(totalCriticalCount, 0, this.totalCriticalCount, 1000);
+    this.animateValuePercentage(recoveryRateCount, 0, this.recoveryRateCount, 1000);
+    this.animateValuePercentage(fatalityRateCount, 0, this.fatalityRateCount, 1000);
+    this.animateValue(dailyConfirmedCount, 0, this.dailyConfirmedCount, 1000);
+    this.animateValue(dailyDeceasedCount, 0, this.dailyDeceasedCount, 1000);
 
-    this.animateValuePercentage(
-      recoveryRateCount,
-      0,
-      this.recoveryRateCount,
-      1000
-    );
-    this.animateValuePercentage(
-      fatalityRateCount,
-      0,
-      this.fatalityRateCount,
-      1000
-    );
   }
 
   animateValue(obj, start, end, duration) {
