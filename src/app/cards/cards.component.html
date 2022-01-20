@@ -63,7 +63,7 @@
 
     <mat-card fxFlex id="news-card">
       <div fxFlex fxLayout="column" fxLayoutWrap="wrap" id="news-content">
-        <mat-card-header><strong>Latest News</strong></mat-card-header>
+        <mat-card-header class="news-card-header"><strong>Latest News</strong></mat-card-header>
         <div *ngFor="let news of newsData">
           <mat-card fxFlex (click)="goToUrl(news.url)" id="news-content-card">
             <div id="img-div">
