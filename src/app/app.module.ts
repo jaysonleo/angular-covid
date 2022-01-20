@@ -18,7 +18,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 
-import { PreventionComponent } from './prevention/prevention.component';
+import { SymptomsComponent } from './symptoms/symptoms.component';
 import { CausesComponent } from './causes/causes.component';
 import { AboutComponent } from './about/about.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -27,7 +27,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     AppComponent,
     NavbarComponent,
     CardsComponent,
-    PreventionComponent,
+    SymptomsComponent,
     CausesComponent,
     AboutComponent,
     SidenavComponent,
